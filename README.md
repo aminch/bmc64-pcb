@@ -1,2 +1,100 @@
-# bmc64-pcb
-BMC64 all-in-one pcb for an original Commodore 64 case
+# BMC64 PCB
+
+The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/), [Rasberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/), original joystick ports, and USB-C power in a single drop-in board which fits straight into an original breadbin or C64C case.  It's powered by the fantastic C64 emulator [BMC64](https://accentual.com/bmc64/) and all ports are moved to suitable positions for an original C64 case for easy access without any case modifications needed! You can also connect an on/off LED indicator into the original spot in the case.
+
+## Parts
+
+### Main PCB
+
+![BMC64 PCB](images/bmc64-pcb-v1.2.png)
+
+### MicroSD card adapter board
+
+ The adapter board is used to connect the MicroSD slot on the Raspberry Pi 3B+ to the main PCB
+
+![MicroSD card adapter](images/MicroSD-adapter-pcb.png)
+
+### BOM
+
+Full [BOM](bom/bom.md) of parts needed.
+
+### Ordering PCBs
+
+I ordered the PCBs via [JLCPCB](https://jlcpcb.com/) with just the standard settings. The main PCB was the standard 1.6mm thick, but it is important to order the MicroSD adapter board in **0.6mm** or **0.8mm** thick or it will be too big to fit into the microSD slot on the Raspberry Pi 3B+!
+
+Check the Releases, or `gerbers` folder for the gerber files.
+
+## Assembly
+
+
+The first step in assembly is to attach the microSD adapter board. We will do this by inserting the adapter into the Raspberry Pi 3B+, loosely assembling it in place, then tack soldering the adapter board to the correct location:
+ 
+ * Attach the M2.5 nylon stand-offs to the four corners on the board where the Raspberry Pi 3B+ will be mounted.
+ * Cut two 1x4 sets of header pins from the 1x20 header pins in the [BOM](bom/bom.md).
+ * Slide the MicroSD adapter into the Raspberry Pi 3B+.
+ * Place the 2 sets of 1x4 headers on the main PCB.
+ * Place the Raspberry Pi 3B+ on the nylon stand-offs while inserting the header pins into the MicroSD card adapter.
+ * Put one (or more) screws into the Raspberry Pi 3B+ to hold everything in place.
+ * Place solder on the outer pins on top to holder the header pins in place
+ * Flip the board and solder the outer pins on the headers too.
+ * Flip the board and carefully remove the Raspberry Pi 3B+, and it should look like the picture below.
+
+![MicroSD card adapter positioning](images/microsd-adapter-position.jpg)
+
+ * Confirm that the positioning is ok by placing the Raspberry Pi 3B+ back on the adapter.
+ * Adjust the board if needed by reheating the solder on the pins until you're happy.
+ * Remove the Raspberry Pi 3B+ again.
+ * Complete the final soldering on all of the header pins.
+
+All of the other parts are labelled on the board. Start with the smallest components and work your way up until everything is attached. The list of parts to attach are below and the finished board should look as in the picture:
+
+ * USB-C power port and 2x 5.1K resistors
+ * Main power switch and fuse
+ * 2x DB9 joystick ports and IC Regulator 
+ * GPIO header
+ * 390ohm resistor & 1x3 LED header
+ * 2x USB ports
+ * 1x20 header pins (for C64 keyboard)
+ * 2x 1x20 female headers for mounting the Raspberry Pi Pico
+ * MicroSD card slot
+
+![BMC64 PCB](images/bcm64-pcb-v1.2.jpg)
+
+To assemble the final parts:
+
+ * Push the Raspberry Pi Pico into the female headers on the board.
+ * Attach the Raspberry Pi 3B+ to the nylon stand-off with screws being careful to slide in the microSD card adapter in the process.
+ * Attach the Raspberry Pi Pico to the Raspberry Pi 3B+ with a short usb micro-A cable.
+ * Connect the USB_EXT port to one of the Raspberry Pi 3B+'s usb ports with the short usb A-A cable.
+ * Connect the Raspberry Pi 3B+ to the GPIO connector with the 40pin GPIO ribbon cable. (Note: Cut the cable to suit if desired)
+ * Replace the plastic switch on the main switch with the smaller one included in the [BOM](bom/bom.md). (This is needed for the switch to fit correctly in the hole in the C64 case)
+ * The finished board should be ready to drop into the case! It should look like it does below:
+
+![BMC64 PCB with Raspberry Pi](images/bcm64-pcb-with-pi-v1.2.jpg)
+
+The fitment of the board inside a C64C case is shown below. All ports, the power switch and USB-C power connector use the existing holes in the case. It is mounted using screws to the existing stand-offs inside the case. It has mounting holes compatible with the breadbin and C64C cases.
+
+![BMC64 PCB case fitment](images/bmc64-pcb-v1.2-fitment.jpg)
+
+## Software
+
+It runs the [BMC64](https://accentual.com/bmc64/) emulator. Install this onto a MicroSD. You will need to run with the GPIO Config Option #1, and `positional` setting for the keyboard.
+
+You will need to install the latest [C64P](https://github.com/aminch/c64p/releases) firmware on the Raspberry Pi Pico. Do this by connecting it to a PC then dropping the firmware on the drive that is attached. 
+
+For the first run of BMC64 you will need to switch the keyboard into BMC64 mode by pressing `RUN/STOP + F3`. (For details see: [C64P Readme](https://github.com/aminch/c64p))
+
+## History
+
+### 1.2
+
+To read the journey from the prototype V1.0 PCB to the V1.2 check out the blog post: [All in One BCM64 PCB](https://retro.minch.io/2025/06/all-in-one-bmc64-pcb/)
+
+### Pre-PCB solutions
+
+Before I went for the single PCB solution I had tried many options to make a clean build for a **new** C64. You can read about that in the series of blog posts I made (link below). You can also find information about the choices I made in this project, such as not connecting an original C64 keyboard directly via GPIO but going for the USB keyboard option.
+
+* [Building a Commodore 64 - Part I - (Why!?!)](https://retro.minch.io/2021/12/building-a-commodore-64-part-i-why/) - The whole journey to here
+* [Building a Commodore 64 - Part VIII - (BMC64 Keyboard)](https://retro.minch.io/2022/02/building-a-commodore-64-part-viii-bmc64-keyboard/) - USB keyboard choice specifics 
+* [C64P - BMC64 Keyboard](https://retro.minch.io/2023/04/c64p-bmc64-keyboard/) - Original C64 USB Keyboard adapter
+
