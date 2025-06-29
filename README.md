@@ -87,6 +87,10 @@ For the first run of BMC64 you will need to switch the keyboard into BMC64 mode 
 
 ## History
 
+### 1.2.1
+
+Small adjustments on SD_CONN, main power switch and external USB port for improved fitment.
+
 ### 1.2
 
 To read the journey from the prototype V1.0 PCB to the V1.2 check out the blog post: [All in One BCM64 PCB](https://retro.minch.io/2025/06/all-in-one-bmc64-pcb/)
