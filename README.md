@@ -119,7 +119,7 @@ For the first run of BMC64 you will need to switch the keyboard into BMC64 mode 
 Changes for the 2.0 model were:
 
  * ESD protection with TVS diodes added to the joystick ports
- * Added an addition rear facing USB port
+ * Added an additional rear facing USB port
  * Repositioned the keyboard header for a cleaner connection
  * Adjusted the mounting holes for better fitment
  * Thicker traces for main power rail
