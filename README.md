@@ -2,7 +2,24 @@
 
 The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/), [Rasberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/), original joystick ports, and USB-C power in a single drop-in board which fits straight into an original breadbin or C64C case.  It's powered by the fantastic C64 emulator [BMC64](https://accentual.com/bmc64/) and all ports are moved to suitable positions for an original C64 case for easy access without any case modifications needed! You can also connect an on/off LED indicator into the original spot in the case.
 
-## Parts
+- [BMC64 PCB](#bmc64-pcb)
+  - [PCBs \& Parts](#pcbs--parts)
+    - [Main PCB](#main-pcb)
+    - [MicroSD card adapter board](#microsd-card-adapter-board)
+    - [BOM](#bom)
+    - [Ordering PCBs](#ordering-pcbs)
+    - [Schematics](#schematics)
+  - [Assembly](#assembly)
+  - [Software](#software)
+  - [History](#history)
+    - [2.0.1](#201)
+    - [1.2.1](#121)
+    - [1.2](#12)
+    - [Pre-PCB solutions](#pre-pcb-solutions)
+  - [Disclaimer](#disclaimer)
+
+
+## PCBs & Parts
 
 ### Main PCB
 
@@ -23,6 +40,12 @@ Full [BOM](bom/bom.md) of parts needed.
 I ordered the PCBs via [JLCPCB](https://jlcpcb.com/) with just the standard settings. The main PCB was the standard 1.6mm thick, but it is important to order the MicroSD adapter board in **0.6mm** or **0.8mm** thick or it will be too big to fit into the microSD slot on the Raspberry Pi 3B+!
 
 Check the Releases, or `gerbers` folder for the gerber files.
+
+### Schematics
+
+![BMC64 PCB Schematic](schemantics/Schematic_BMC64-PCB-V2.0.1_2025-07.png)
+
+![MicroSD card adapter](schemantics/Schematic_MicroSD-Adapter_2025-07.png)
 
 ## Assembly
 
