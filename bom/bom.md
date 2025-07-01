@@ -23,7 +23,17 @@ All of the parts needed to build a V1.2.x board
 | 17    | SC0917                   | Raspberry Pi                    | RASPBERRY PI PICO H RP2040       | 1                    | [2648-SC0917-ND](https://www.digikey.no/en/products/detail/raspberry-pi/SC0917/16608257)                | [DataSheet](https://datasheets.raspberrypi.com/pico/pico-datasheet.pdf) |
 
 
-Digikey BOM [Online](https://www.digikey.no/en/mylists/list/AAZG3O20GN)
+Digikey 1.2.x BOM [Online](https://www.digikey.no/en/mylists/list/AAZG3O20GN)
+
+Additional parts needed to build v2.0.x board on top of all the parts above for a v1.2.x.
+
+| Index | Manufacturer Part Number | Manufacturer Name               | Description                      | Quantity | Digi-Key Part Number 1        | Datasheet                                                                                                                                                                   |
+|-------|--------------------------|---------------------------------|----------------------------------|----------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 18     | 0676430910               | Molex                           | CONN RCPT TYPEA 4POS R/A         | 2                    | [WM4993-ND](https://www.digikey.no/en/products/detail/molex/0676430910/917619)                     | [DataSheet](https://www.molex.com/en-us/products/part-detail/676430910?display=pdf) |
+| 19    | ESDA5V3SC5               | STMicroelectronics              | TVS DIODE 3VWM SOT235            | 4                    | [497-7746-1-ND](https://www.digikey.no/en/products/detail/stmicroelectronics/ESDA5V3SC5/1037979)                 | [DataSheet](https://www.st.com/content/ccc/resource/technical/document/datasheet/7f/2e/1d/82/74/9c/4b/a1/CD00002055.pdf/files/CD00002055.pdf/jcr:content/translations/en.CD00002055.pdf) |
+| 20    | CC0603KRX7R7BB104        | YAGEO                           | CAP CER 0.1UF 16V X7R 0603       | 2                    | [311-1088-1-ND](https://www.digikey.no/en/products/detail/yageo/CC0603KRX7R7BB104/302822)                 | [DataSheet](https://www.yageo.com/en/Chart/Download/pdf/CC0603KRX7R7BB104)                                                                                                               |
+
+Full Digikey 2.0.x BOM [Online](https://www.digikey.no/en/mylists/list/87RX3ML0NQ)
 
 ## AliExpress parts
 
@@ -36,8 +46,8 @@ Short 40pin GPIO Ribbon Cable
 Short USB Cables (5cm)
 
 * [USB-A (Male) to Micro USB (Male)](https://www.aliexpress.com/item/1005005979889500.html) - (AMST-V8ST) 5cm
-* [USB-A (Male) to USB-A (Male)](https://www.aliexpress.com/item/1005006339293579.html) - (AMST-AMST) 5cm
+* 2x [USB-A (Male) to USB-A (Male)](https://www.aliexpress.com/item/1005006339293579.html) - (AMST-AMST) 5cm
 
 M2.5 6mm Nylon Stand offs 
 
-* [Nylon M2.5 6+6](https://www.aliexpress.com/item/1005005979250243.html) - M2.5 size, 6mm height, 6mm thread length. You can find options with the screw, stand-off and nut in one package.
+* 4x [Nylon M2.5 6+6](https://www.aliexpress.com/item/1005005979250243.html) - M2.5 size, 6mm height, 6mm thread length. You can find options with the screw, stand-off and nut in one package.

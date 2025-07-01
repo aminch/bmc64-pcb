@@ -6,7 +6,7 @@ The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com
 
 ### Main PCB
 
-![BMC64 PCB](images/bmc64-pcb-v1.2.png)
+![BMC64 PCB](images/bmc64-pcb-v2.0.1.png)
 
 ### MicroSD card adapter board
 
@@ -47,33 +47,37 @@ The first step in assembly is to attach the microSD adapter board. We will do th
 
 All of the other parts are labelled on the board. Start with the smallest components and work your way up until everything is attached. The list of parts to attach are below and the finished board should look as in the picture:
 
- * USB-C power port and 2x 5.1K resistors
+ * USB-C power port, 2x 5.1K resistors and 2x 0.1µF capacitors
  * Main power switch and fuse
  * 2x DB9 joystick ports and IC Regulator 
  * GPIO header
  * 390ohm resistor & 1x3 LED header
- * 2x USB ports
+ * 4x USB ports
  * 1x20 header pins (for C64 keyboard)
  * 2x 1x20 female headers for mounting the Raspberry Pi Pico
  * MicroSD card slot
 
-![BMC64 PCB](images/bcm64-pcb-v1.2.jpg)
+![BMC64 PCB](images/bcm64-pcb-v2.0.1.jpg)
+
+You'll need to flip the board for the final components
+
+ * 4x TVS diodes in the ESD1-4 positions next to the joysticks
+
+![BMC64 PCB](images/bcm64-pcb-bottom-v2.0.1.jpg)
 
 To assemble the final parts:
 
  * Push the Raspberry Pi Pico into the female headers on the board.
  * Attach the Raspberry Pi 3B+ to the nylon stand-off with screws being careful to slide in the microSD card adapter in the process.
  * Attach the Raspberry Pi Pico to the Raspberry Pi 3B+ with a short usb micro-A cable.
- * Connect the USB_EXT port to one of the Raspberry Pi 3B+'s usb ports with the short usb A-A cable.
+ * Connect the two USB_EXT ports to one of the Raspberry Pi 3B+'s usb ports with the short usb A-A cables.
  * Connect the Raspberry Pi 3B+ to the GPIO connector with the 40pin GPIO ribbon cable. (Note: Cut the cable to suit if desired)
  * Replace the plastic switch on the main switch with the smaller one included in the [BOM](bom/bom.md). (This is needed for the switch to fit correctly in the hole in the C64 case)
  * The finished board should be ready to drop into the case! It should look like it does below:
 
-![BMC64 PCB with Raspberry Pi](images/bcm64-pcb-with-pi-v1.2.jpg)
+![BMC64 PCB with Raspberry Pi](images/bcm64-pcb-with-pi-v2.0.1.jpg)
 
-The fitment of the board inside a C64C case is shown below. All ports, the power switch and USB-C power connector use the existing holes in the case. It is mounted using screws to the existing stand-offs inside the case. It has mounting holes compatible with the breadbin and C64C cases.
-
-![BMC64 PCB case fitment](images/bmc64-pcb-v1.2-fitment.jpg)
+The fitment of the board inside a C64C case is shown also shown above. All ports, the power switch and USB-C power connector use the existing holes in the case. It is mounted using screws to the existing stand-offs inside the case. It has mounting holes compatible with the breadbin and C64C cases.
 
 ## Software
 
@@ -87,6 +91,17 @@ For the first run of BMC64 you will need to switch the keyboard into BMC64 mode 
 
 ## History
 
+### 2.0.1
+
+Changes for the 2.0 model were:
+
+ * ESD protection with TVS diodes added to the joystick ports
+ * Added an addition rear facing USB port
+ * Repositioned the keyboard header for a cleaner connection
+ * Adjusted the mounting holes for better fitment
+ * Thicker traces for main power rail
+ * Repositioned traces to avoid foot of keyboard mount for C64C case
+ 
 ### 1.2.1
 
 Small adjustments on SD_CONN, main power switch and external USB port for improved fitment.
