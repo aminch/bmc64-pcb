@@ -12,6 +12,7 @@ The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com
   - [Assembly](#assembly)
   - [Software](#software)
   - [History](#history)
+    - [2.0.4](#204)
     - [2.0.1](#201)
     - [1.2.1](#121)
     - [1.2](#12)
@@ -23,7 +24,7 @@ The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com
 
 ### Main PCB
 
-![BMC64 PCB](images/bmc64-pcb-v2.0.1.png)
+![BMC64 PCB](images/bmc64-pcb-v2.0.4.png)
 
 ### MicroSD card adapter board
 
@@ -43,7 +44,7 @@ Check the Releases, or `gerbers` folder for the gerber files.
 
 ### Schematics
 
-![BMC64 PCB Schematic](schemantics/Schematic_BMC64-PCB-V2.0.1_2025-07.png)
+![BMC64 PCB Schematic](schemantics/Schematic_BMC64-PCB-V2.0.4_2025-07.png)
 
 ![MicroSD card adapter](schemantics/Schematic_MicroSD-Adapter_2025-07.png)
 
@@ -79,6 +80,7 @@ All of the other parts are labelled on the board. Start with the smallest compon
  * 1x20 header pins (for C64 keyboard)
  * 2x 1x20 female headers for mounting the Raspberry Pi Pico
  * MicroSD card slot
+ * 1x6 female header for FTDI232 debug points (optional)
 
 ![BMC64 PCB](images/bcm64-pcb-v2.0.1.jpg)
 
@@ -114,9 +116,17 @@ For the first run of BMC64 you will need to switch the keyboard into BMC64 mode 
 
 ## History
 
+### 2.0.4
+
+Changes for the 2.0.4:
+
+ * Added debug port to direct connect a FTDI232
+ * Extend PCB cut outs for switch for better clearance
+ * Minor trace repositioning and clean up
+
 ### 2.0.1
 
-Changes for the 2.0 model were:
+Changes for the 2.0.1 model were:
 
  * ESD protection with TVS diodes added to the joystick ports
  * Added an additional rear facing USB port
