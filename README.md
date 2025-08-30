@@ -108,7 +108,7 @@ The fitment of the board inside a C64C case is shown also shown above. All ports
 
 It runs the [BMC64](https://accentual.com/bmc64/) emulator. Install this onto a MicroSD. You will need to run with the GPIO Config Option #1, and `positional` setting for the keyboard.
 
-You will need to install the latest [C64P](https://github.com/aminch/c64p/releases) firmware on the Raspberry Pi Pico. Do this by connecting it to a PC then dropping the firmware on the drive that is attached. 
+You will need to install the latest [C64P](https://github.com/aminch/c64p/releases) firmware on the Raspberry Pi Pico. Do this by connecting it to a PC then dropping the firmware on the drive that is attached. Note: you **MUST** use the _legacy_ build of the uf2 firmware as the bmc-pcb uses the legacy pinout.
 
 For the first run of BMC64 you will need to switch the keyboard into BMC64 mode by pressing `RUN/STOP + F3`. (For details see: [C64P Readme](https://github.com/aminch/c64p))
 
