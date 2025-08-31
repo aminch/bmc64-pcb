@@ -12,6 +12,7 @@ The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com
   - [Assembly](#assembly)
   - [Software](#software)
   - [History](#history)
+    - [2.0.5](#205)
     - [2.0.4](#204)
     - [2.0.1](#201)
     - [1.2.1](#121)
@@ -24,13 +25,13 @@ The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com
 
 ### Main PCB
 
-![BMC64 PCB](images/bmc64-pcb-v2.0.4.png)
+![BMC64 PCB](images/bmc64-pcb-v2.0.5.png)
 
 ### MicroSD card adapter board
 
  The adapter board is used to connect the MicroSD slot on the Raspberry Pi 3B+ to the main PCB
 
-![MicroSD card adapter](images/MicroSD-adapter-pcb.png)
+![MicroSD card adapter](images/MicroSD-adapter-pcb-v1.1.png)
 
 ### BOM
 
@@ -44,7 +45,7 @@ Check the Releases, or `gerbers` folder for the gerber files.
 
 ### Schematics
 
-![BMC64 PCB Schematic](schemantics/Schematic_BMC64-PCB-V2.0.4_2025-07.png)
+![BMC64 PCB Schematic](schemantics/Schematic_BMC64-PCB-V2.0.5_2025-08.png)
 
 ![MicroSD card adapter](schemantics/Schematic_MicroSD-Adapter_2025-07.png)
 
@@ -100,6 +101,8 @@ To assemble the final parts:
  * Replace the plastic switch on the main switch with the smaller one included in the [BOM](bom/bom.md). (This is needed for the switch to fit correctly in the hole in the C64 case)
  * The finished board should be ready to drop into the case! It should look like it does below:
 
+Note: Image below shows v2.0.1, MicroSD card slot & USB ports are repositioned in v2.0.5 (See: [PCB](images/bmc64-pcb-v2.0.5.png))
+
 ![BMC64 PCB with Raspberry Pi](images/bcm64-pcb-with-pi-v2.0.1.jpg)
 
 The fitment of the board inside a C64C case is shown also shown above. All ports, the power switch and USB-C power connector use the existing holes in the case. It is mounted using screws to the existing stand-offs inside the case. It has mounting holes compatible with the breadbin and C64C cases.
@@ -108,7 +111,7 @@ The fitment of the board inside a C64C case is shown also shown above. All ports
 
 It runs the [BMC64](https://accentual.com/bmc64/) emulator. Install this onto a MicroSD. You will need to run with the GPIO Config Option #1, and `positional` setting for the keyboard.
 
-You will need to install the latest [C64P](https://github.com/aminch/c64p/releases) firmware on the Raspberry Pi Pico. Do this by connecting it to a PC then dropping the firmware on the drive that is attached. 
+You will need to install the latest [C64P](https://github.com/aminch/c64p/releases) firmware on the Raspberry Pi Pico (legacy uf2 file). Do this by connecting it to a PC then dropping the firmware on the drive that is attached. 
 
 Note: you **MUST** use the _legacy_ build of the uf2 firmware of C64P for v3.0 onwards as the bmc-pcb uses the legacy pinout.
 
@@ -116,7 +119,41 @@ For the first run of BMC64 you will need to switch the keyboard into BMC64 mode 
 
 **Note:** This is a basic PCB. It's designed only for use with the BMC64 emulator, it's not recommended to use any other software on your Raspberry Pi 3B+ when using this PCB. See disclaimer below.
 
+### Alternative software
+
+With the release of v2.0.5, it's now possible to use a Pi 4 or Pi 5 (recommended).
+
+Note: BMC64 **IS NOT COMPATIBLE** with Pi 4 or Pi 5!!!
+
+If you use a Pi 4 or Pi 5 you need to run Pi OS then install emulators on PiOS and configure them up to use the GPIO joystick ports. To make this easy you can use [8 bit pc Pi compile](https://github.com/aminch/8-bit-pc-pi-compile), a repository that contains scripts to install Vice and Atari800 emulators onto PiOS Lite. It also includes a menu and configuration to support the bcm-pcb.
+
+C64P also includes a Vice mode to work with an original C64 keyboard. You need to press `RUN/STOP + F5` on first launch. (For details see: [C64P Readme](https://github.com/aminch/c64p))
+
+### Compatibility
+
+The table below shows the pcb hardware and software compatibility:
+
+| Component              | PCB V1.2x | PCB V2.0.1 | PCB V2.0.4 | PCB V2.0.5 |
+|------------------------|:---------:|:----------:|:----------:|:----------:|
+| MicroSD Adapter 1.0    |     ✓     |     ✓      |     ✓      |     ✗      |
+| MicroSD Adapter 1.1    |     ✓     |     ✓      |     ✓      |     ✓      |
+| C64P                   |  latest*  |  latest*   |  latest*   |  latest*   |
+| Pi 3                   |     ✓     |     ✓      |     ✓      |     ✓      |
+| Pi 4                   |     ✗     |     ✗      |     ✗      |     ✓^     |
+| Pi 5                   |     ✗     |     ✗      |     ✗      |     ✓^     |
+
+\* C64P Legacy uf2 firmware is required for C64P v3.0 or later  
+^ Pi 4 & Pi 5 requires PCB >= v2.0.5 and MicroSD adapter >= v1.1
+
 ## History
+
+### 2.0.5
+
+Changes for the 2.0.5:
+
+ * Repositioning of MicroSD card, USB ports extensions and LED connector
+ * Increased trace thickness for VCC / GND on MicroSD adapter
+ * MicroSD adapter now compatible with Pi4 & Pi5
 
 ### 2.0.4
 
