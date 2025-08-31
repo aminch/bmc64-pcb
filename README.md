@@ -121,11 +121,11 @@ For the first run of BMC64 you will need to switch the keyboard into BMC64 mode 
 
 ### Alternative software
 
-With the release of v2.0.5, it's now possible to use a Pi 4 or Pi 5 (recommended).
+With the release of v2.0.5, it's now possible to use a [Pi 4B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) or [Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/) (recommended).
 
-Note: BMC64 **IS NOT COMPATIBLE** with Pi 4 or Pi 5!!!
+Note: BMC64 **IS NOT COMPATIBLE** with Pi 4B or Pi 5!!!
 
-If you use a Pi 4 or Pi 5 you need to run Pi OS then install emulators on PiOS and configure them up to use the GPIO joystick ports. To make this easy you can use [8 bit pc Pi compile](https://github.com/aminch/8-bit-pc-pi-compile), a repository that contains scripts to install Vice and Atari800 emulators onto PiOS Lite. It also includes a menu and configuration to support the bcm-pcb.
+If you use a Pi 4B or Pi 5 you need to run Pi OS then install emulators on PiOS and configure them up to use the GPIO joystick ports. To make this easy you can use [8 bit pc Pi compile](https://github.com/aminch/8-bit-pc-pi-compile), a repository that contains scripts to install Vice and Atari800 emulators onto PiOS Lite. It also includes a menu and configuration to support the bcm-pcb.
 
 C64P also includes a Vice mode to work with an original C64 keyboard. You need to press `RUN/STOP + F5` on first launch. (For details see: [C64P Readme](https://github.com/aminch/c64p))
 
@@ -138,14 +138,14 @@ The table below shows the pcb hardware and software compatibility:
 | MicroSD Adapter 1.0    |     ✓     |     ✓      |     ✓      |     ✗      |
 | MicroSD Adapter 1.1    |     ✓     |     ✓      |     ✓      |     ✓      |
 | C64P                   |  latest*  |  latest*   |  latest*   |  latest*   |
-| Pi 3                   |     ✓     |     ✓      |     ✓      |     ✓      |
-| Pi 4                   |     ✗     |     ✗      |     ✗      |     ✓^     |
+| Pi 3B/3B+              |     ✓     |     ✓      |     ✓      |     ✓      |
+| Pi 4B                  |     ✗     |     ✗      |     ✗      |     ✓^     |
 | Pi 5                   |     ✗     |     ✗      |     ✗      |     ✓^     |
 
 \* C64P Legacy uf2 firmware is required for C64P v3.0 or later  
-^ Pi 4 & Pi 5 requires PCB >= v2.0.5 and MicroSD adapter >= v1.1
+^ Pi 4B & Pi 5 requires PCB >= v2.0.5 and MicroSD adapter >= v1.1
 
-## History
+## Historyusing
 
 ### 2.0.5
 
@@ -153,7 +153,7 @@ Changes for the 2.0.5:
 
  * Repositioning of MicroSD card, USB ports extensions and LED connector
  * Increased trace thickness for VCC / GND on MicroSD adapter
- * MicroSD adapter now compatible with Pi4 & Pi5
+ * MicroSD adapter now compatible with Pi 4B & Pi 5
 
 ### 2.0.4
 
