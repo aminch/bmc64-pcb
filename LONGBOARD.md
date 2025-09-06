@@ -1,11 +1,16 @@
-# BMC64 PCB
+# BMC64 PCB (Longboard)
 
-The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/), [Waveshare RP2040-Zero](https://www.waveshare.com/wiki/RP2040-Zero), original joystick ports, and USB-C power in a single drop-in board which fits straight into an original breadbin or C64C case with an original C64 keyboard.  It's powered by the fantastic C64 emulator [BMC64](https://accentual.com/bmc64/) and all ports are moved to suitable positions inside an original C64 case for easy access without any case modifications needed! You can also connect up the original LED.
+This Longboard README details how to build the v 2.0.5 of the BMC64 PCB, which was the last version of the larger PCB before it was redesigned into the [shortboard](README.md) format from v 2.2 and onward. This repository also contains gerbers, schematics and images for all previous versions in the appropriate folders.
 
-- [BMC64 PCB](#bmc64-pcb)
-  - [Revisions](#revisions)
+The longboard is still a great board to use, but use the shortboard if you want the latest and greatest.
+
+---
+
+The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/), [Rasberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/), original joystick ports, and USB-C power in a single drop-in board which fits straight into an original breadbin or C64C case.  It's powered by the fantastic C64 emulator [BMC64](https://accentual.com/bmc64/) and all ports are moved to suitable positions for an original C64 case for easy access without any case modifications needed! You can also connect an on/off LED indicator into the original spot in the case.
+
+- [BMC64 PCB (Longboard)](#bmc64-pcb-longboard)
   - [PCBs \& Parts](#pcbs--parts)
-    - [Main PCB](#main-pcb)
+    - [Main PCB - Longboard](#main-pcb---longboard)
     - [MicroSD card adapter board](#microsd-card-adapter-board)
     - [BOM](#bom)
     - [Ordering PCBs](#ordering-pcbs)
@@ -13,9 +18,8 @@ The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com
   - [Assembly](#assembly)
   - [Software](#software)
     - [Alternative software](#alternative-software)
-    - [Debugging BMC64](#debugging-bmc64)
+    - [Compatibility](#compatibility)
   - [History](#history)
-    - [2.2](#22)
     - [2.0.5](#205)
     - [2.0.4](#204)
     - [2.0.1](#201)
@@ -24,41 +28,34 @@ The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com
     - [Pre-PCB solutions](#pre-pcb-solutions)
   - [Disclaimer](#disclaimer)
 
-## Revisions
-
-In the spirit of the original Commodore 64, there are two main revisions of the BMC64 PCB, just as there were two main sizes of [motherboards](https://www.c64-wiki.com/wiki/Motherboard) used in Commodore 64s. I'm even reusing the same naming convention. The longboard and shortboard. 
-
-The longboards are the original versions of the BMC64 PCB named because the PCB was larger than newer shortboard versions. They use both the expansion (cartridge) port and cassette port holes in the case to expose the HDMI, USB and MicroSD card ports. Longboards are numbered up to v 2.0.5. Details on the longboard and how to build one have been moved to it's own [LONGBOARD](LONGBOARD.md) readme.
-
-The short board was introduced in v 2.2. It's smaller and only uses the expansion (cartridge) port to expose the HDMI, USB and MicroSD card ports. This readme details how to build the shortboard revision.
 
 ## PCBs & Parts
 
-### Main PCB
+### Main PCB - Longboard
 
-![BMC64 PCB](images/bmc64-pcb-v2.2.png)
+![BMC64 PCB](images/bmc64-pcb-v2.0.5.png)
 
 ### MicroSD card adapter board
 
  The adapter board is used to connect the MicroSD slot on the Raspberry Pi 3B+ to the main PCB
 
-![MicroSD card adapter](images/MicroSD-adapter-pcb-v1.1g.png)
+![MicroSD card adapter](images/MicroSD-adapter-pcb-v1.1.png)
 
 ### BOM
 
-Full [BOM](bom/bom.md) of parts needed.
+Full [BOM (Longboard)](bom/longboard-bom.md) of parts needed.
 
 ### Ordering PCBs
 
 I ordered the PCBs via [JLCPCB](https://jlcpcb.com/) with just the standard settings. The main PCB was the standard 1.6mm thick, but it is important to order the MicroSD adapter board in **0.6mm** or **0.8mm** thick or it will be too big to fit into the microSD slot on the Raspberry Pi 3B+!
 
-Check the [Releases](https://github.com/aminch/bmc64-pcb/releases) for the gerber files.
+Check the Releases, or `gerbers` folder for the gerber files.
 
 ### Schematics
 
-![BMC64 PCB Schematic](schemantics/Schematic_BMC64-PCB-V2.2_2025-08.png)
+![BMC64 PCB Schematic](schemantics/Schematic_BMC64-PCB-V2.0.5_2025-08.png)
 
-![MicroSD card adapter](schemantics/Schematic_MicroSD-Adapter-V1.1_2025-07.png)
+![MicroSD card adapter](schemantics/Schematic_MicroSD-Adapter_2025-07.png)
 
 ## Assembly
 
@@ -69,7 +66,7 @@ The first step in assembly is to attach the microSD adapter board. We will do th
  * Slide the MicroSD adapter into the Raspberry Pi 3B+.
  * Place the 2 sets of 1x4 headers on the main PCB.
  * Place the Raspberry Pi 3B+ on the nylon stand-offs while inserting the header pins into the MicroSD card adapter.
- * Put two (or more) screws into the Raspberry Pi 3B+ to hold everything in place.
+ * Put one (or more) screws into the Raspberry Pi 3B+ to hold everything in place.
  * Place solder on the outer pins on top to holder the header pins in place
  * Flip the board and solder the outer pins on the headers too.
  * Flip the board and carefully remove the Raspberry Pi 3B+, and it should look like the picture below.
@@ -88,39 +85,43 @@ All of the other parts are labelled on the board. Start with the smallest compon
  * 2x DB9 joystick ports and IC Regulator 
  * GPIO header
  * 390ohm resistor & 1x3 LED header
- * 2x Stacked USB 3.0 ports
+ * 4x USB ports
  * 1x20 header pins (for C64 keyboard)
- * 2x 1x9 and 1x 1x5 female headers for mounting the RP2040-Zero
+ * 2x 1x20 female headers for mounting the Raspberry Pi Pico
  * MicroSD card slot
  * 1x6 female header for FTDI232 debug points (optional)
 
-![BMC64 PCB](images/bcm64-pcb-v2.2.jpg)
+![BMC64 PCB](images/bcm64-pcb-v2.0.1.jpg)
 
 You'll need to flip the board for the final components
 
  * 4x TVS diodes in the ESD1-4 positions next to the joysticks
 
-![BMC64 PCB](images/bcm64-pcb-bottom-v2.2.jpg)
+![BMC64 PCB](images/bcm64-pcb-bottom-v2.0.1.jpg)
 
 To assemble the final parts:
 
- * Push the Waveshare RP2040-Zero into the female headers on the board.
+ * Push the Raspberry Pi Pico into the female headers on the board.
  * Attach the Raspberry Pi 3B+ to the nylon stand-off with screws being careful to slide in the microSD card adapter in the process.
- * Attach the Waveshare RP2040-Zero to the Raspberry Pi 3B+ with a short usb C-A cable.
- * Connect the two USB ports to two of the Raspberry Pi 3B+'s usb ports with the short usb A-A cables.
+ * Attach the Raspberry Pi Pico to the Raspberry Pi 3B+ with a short usb micro-A cable.
+ * Connect the two USB_EXT ports to one of the Raspberry Pi 3B+'s usb ports with the short usb A-A cables.
  * Connect the Raspberry Pi 3B+ to the GPIO connector with the 40pin GPIO ribbon cable. (Note: Cut the cable to suit if desired)
  * Replace the plastic switch on the main switch with the smaller one included in the [BOM](bom/bom.md). (This is needed for the switch to fit correctly in the hole in the C64 case)
  * The finished board should be ready to drop into the case! It should look like it does below:
 
-![BMC64 PCB with Raspberry Pi](images/bcm64-pcb-with-pi-v2.2.jpg)
+Note: Image below shows v2.0.1, MicroSD card slot & USB ports are repositioned in v2.0.5 (See: [PCB](images/bmc64-pcb-v2.0.5.png))
 
-The fitment of the board inside a C64 breadbin case is shown also shown above. All ports, the power switch and USB-C power connector use the existing holes in the case. It is mounted using screws to the existing stand-offs inside the case. It has mounting holes compatible with the breadbin and C64C cases.
+![BMC64 PCB with Raspberry Pi](images/bcm64-pcb-with-pi-v2.0.1.jpg)
+
+The fitment of the board inside a C64C case is shown also shown above. All ports, the power switch and USB-C power connector use the existing holes in the case. It is mounted using screws to the existing stand-offs inside the case. It has mounting holes compatible with the breadbin and C64C cases.
 
 ## Software
 
 It runs the [BMC64](https://accentual.com/bmc64/) emulator. Install this onto a MicroSD. You will need to run with the GPIO Config Option #1, and `positional` setting for the keyboard.
 
-You will need to install the latest [C64P](https://github.com/aminch/c64p/releases) firmware on the Raspberry Pi Pico (**do not use** the legacy uf2 file). Do this by connecting it to a PC then dropping the firmware on the drive that is attached. 
+You will need to install the latest [C64P](https://github.com/aminch/c64p/releases) firmware on the Raspberry Pi Pico (legacy uf2 file). Do this by connecting it to a PC then dropping the firmware on the drive that is attached. 
+
+Note: you **MUST** use the _legacy_ build of the uf2 firmware of C64P for v3.0 onwards as the bmc-pcb uses the legacy pinout.
 
 For the first run of BMC64 you will need to switch the keyboard into BMC64 mode by pressing `RUN/STOP + F3`. (For details see: [C64P Readme](https://github.com/aminch/c64p))
 
@@ -136,29 +137,24 @@ If you use a Pi 4B or Pi 5 you need to run Pi OS then install emulators on PiOS 
 
 C64P also includes a Vice mode to work with an original C64 keyboard. You need to press `RUN/STOP + F5` on first launch. (For details see: [C64P Readme](https://github.com/aminch/c64p))
 
-### Debugging BMC64
+### Compatibility
 
-An optional debug port can be populated with a 6 position female header. This header connects directly to the [UART port](https://pinout.xyz/pinout/uart) on GPIO pins 14 and 15. The port is labelled with ground (GND), TX and RX, and can use any appropriate debug probe but it has been designed to be pin compatible with a [FTDI FT232RL Type-C to TTL Serial Converter Adapter Module](https://www.aliexpress.com/item/1005007081543813.html) which are super cheap and common on Aliexpress. It is attached to the board as shown below and connected to the computer via USB.
+The table below shows the pcb hardware and software compatibility:
 
-![BMC64 PCB with Debug Probe](images/bcm64-pcb-with-debug-probe-v2.2.jpg)
+| Component              | PCB V2.0.5 | PCB V2.0.4 | PCB V2.0.1 | PCB V1.2x |
+| ---------------------- | :--------: | :--------: | :--------: | :-------: |
+| MicroSD Adapter 1.0    |      ✗     |      ✓     |      ✓     |     ✓     |
+| MicroSD Adapter 1.1    |      ✓     |      ✓     |      ✓     |     ✓     |
+| C64P                   |      ✓     |      ✓     |      ✓     |     ✓     |
+| Pi 3B/3B+              |      ✓     |      ✓     |      ✓     |     ✓     |
+| Pi 4B                  |      ✓     |      ✗     |      ✗     |     ✗     |
+| Pi 5                   |      ✓     |      ✗     |      ✗     |     ✗     |
 
-The debug probe is used to view the output log from the BMC64 emulator while it's running to debug problems. You plug in the debug probe and connect with an application such as Putty e.g.
-
-```
- sudo putty /dev/ttyUSB0 - serial -sercfg 115200,8,n,1,N
-```
+* C64P requires firmware uf2 named _legacy_ for v3.0 or greater, but it compatible with all versions.
 
 ## History
 
-### 2.2
-
-Changes for the 2.2:
-
- * Board redesigned into the smaller shortboard footprint
- * Raspberry Pi Pico replaced with RP2040-Zero
- * C64P updated to PCB v2.0 specifications and pinout
- * USB 3.0 stacked extension replaces single USB 2.0 ports
- * C64 keyboard, LED and Debug headers repositioned for smaller size
+See [README](README.md) for all newer versions
 
 ### 2.0.5
 
