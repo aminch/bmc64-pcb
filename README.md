@@ -11,6 +11,8 @@ The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com
     - [Schematics](#schematics)
   - [Assembly](#assembly)
   - [Software](#software)
+    - [Alternative software](#alternative-software)
+    - [Compatibility](#compatibility)
   - [History](#history)
     - [2.0.5](#205)
     - [2.0.4](#204)
@@ -145,7 +147,7 @@ The table below shows the pcb hardware and software compatibility:
 \* C64P Legacy uf2 firmware is required for C64P v3.0 or later  
 ^ Pi 4B & Pi 5 requires PCB >= v2.0.5 and MicroSD adapter >= v1.1
 
-## Historyusing
+## History
 
 ### 2.0.5
 
