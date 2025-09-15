@@ -160,6 +160,8 @@ Changes for the 2.2:
  * USB 3.0 stacked extension replaces single USB 2.0 ports
  * C64 keyboard, LED and Debug headers repositioned for smaller size
 
+Check out [this blog post](https://retro.minch.io/2025/09/bmc-pcb-22-with-bmc64/) for details of the journey from v1.2 to v2.2.
+
 ### 2.0.5
 
 Changes for the 2.0.5:
