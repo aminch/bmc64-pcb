@@ -120,7 +120,7 @@ The fitment of the board inside a C64 breadbin case is shown also shown above. A
 
 It runs the [BMC64](https://accentual.com/bmc64/) emulator. Install this onto a MicroSD. You will need to run with the GPIO Config Option #1, and `positional` setting for the keyboard.
 
-You will need to install the latest [C64P](https://github.com/aminch/c64p/releases) firmware on the Raspberry Pi Pico (**do not use** the legacy uf2 file). Do this by connecting it to a PC then dropping the firmware on the drive that is attached. 
+You will need to install the latest [C64P](https://github.com/aminch/c64p/releases) firmware on the RP2040-Zero (**do not use** the legacy uf2 file). Do this by connecting it to a PC then dropping the firmware on the drive that is attached. 
 
 For the first run of BMC64 you will need to switch the keyboard into BMC64 mode by pressing `RUN/STOP + F3`. (For details see: [C64P Readme](https://github.com/aminch/c64p))
 
