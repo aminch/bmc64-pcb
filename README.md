@@ -10,6 +10,7 @@ The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com
     - [BOM](#bom)
     - [Ordering PCBs](#ordering-pcbs)
     - [Schematics](#schematics)
+    - [Compatibility](#compatibility)
   - [Assembly](#assembly)
   - [Software](#software)
     - [Alternative software](#alternative-software)
@@ -59,6 +60,12 @@ Check the [Releases](https://github.com/aminch/bmc64-pcb/releases) for the gerbe
 ![BMC64 PCB Schematic](schemantics/Schematic_BMC64-PCB-V2.2_2025-08.png)
 
 ![MicroSD card adapter](schemantics/Schematic_MicroSD-Adapter-V1.1_2025-07.png)
+
+### Compatibility
+
+The [C64P](https://github.com/aminch/c64p) used on this PCB to connect the keyboard is compatible with original C64 keyboards. 
+
+It is currently **NOT** compatible with Mechboard64, which requires the 5V connection to power the LEDs and shift lock mechanism. (See: [#4](https://github.com/aminch/bmc64-pcb/issues/4))
 
 ## Assembly
 
