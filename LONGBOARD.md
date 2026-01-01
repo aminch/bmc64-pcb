@@ -1,8 +1,20 @@
 # BMC64 PCB (Longboard)
 
-This Longboard README details how to build the v 2.0.5 of the BMC64 PCB, which was the last version of the larger PCB before it was redesigned into the [shortboard](README.md) format from v 2.2 and onward. This repository also contains gerbers, schematics and images for all previous versions in the appropriate folders.
+The longboard is effectively **DEPRECATED** for now. It's still a great board, but won't get any more updates for now. 
 
-The longboard is still a great board to use, but use the shortboard if you want the latest and greatest.
+If you want to build a BMC64 machine with a Raspberry Pi 3B+ this board will still work great! 
+
+The features it's missing are:
+
+ * Limited to USB 2.0 extensions (but this probably has zero practical effect)
+ * Doesn't support Mechboard 64 without [modification](MODIFICATIONS.md) 
+ * C64P stuck on firmware v3.0 without [modification](MODIFICATIONS.md)
+
+If there is interest in the longboard I can look into bringing it back in the feature. Create an issue if you're interested and let me know why you would prefer this longboard. 
+
+---
+
+This Longboard README details how to build the v 2.0.5 of the BMC64 PCB, which was the last version of the larger PCB before it was redesigned into the [shortboard](README.md) format from v 2.2 and onward. This repository also contains gerbers, schematics and images for all previous versions in the appropriate folders.
 
 ---
 
@@ -119,9 +131,9 @@ The fitment of the board inside a C64C case is shown also shown above. All ports
 
 It runs the [BMC64](https://accentual.com/bmc64/) emulator. Install this onto a MicroSD. You will need to run with the GPIO Config Option #1, and `positional` setting for the keyboard.
 
-You will need to install the latest [C64P](https://github.com/aminch/c64p/releases) firmware on the Raspberry Pi Pico (legacy uf2 file). Do this by connecting it to a PC then dropping the firmware on the drive that is attached. 
+You will need to install the v3.0 _legacy_ build of [C64P](https://github.com/aminch/c64p/releases/tag/V3.0) firmware on the Raspberry Pi Pico (legacy uf2 file). Do this by connecting it to a PC then dropping the firmware on the drive that is attached. 
 
-Note: you **MUST** use the _legacy_ build of the uf2 firmware of C64P for v3.0 onwards as the bmc-pcb uses the legacy pinout.
+Note: you **MUST** use the v3.0 [_legacy_](https://github.com/aminch/c64p/releases/download/V3.0/c64p_legacy_default.uf2) build of the uf2 firmware as the C64P doesn't support anything else without [modification](MODIFICATIONS.md).
 
 For the first run of BMC64 you will need to switch the keyboard into BMC64 mode by pressing `RUN/STOP + F3`. (For details see: [C64P Readme](https://github.com/aminch/c64p))
 
@@ -129,7 +141,7 @@ For the first run of BMC64 you will need to switch the keyboard into BMC64 mode 
 
 ### Alternative software
 
-With the release of v2.0.5, it's now possible to use a [Pi 4B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) or [Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/) (recommended).
+With the release of v2.0.5, it's now possible to use a [Pi 4B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) or [Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/) (recommended). Even though the longboard is compatible with the Pi 4B and Pi 5, I would recommend the [shortboard](README.md) for this setup.
 
 Note: BMC64 **IS NOT COMPATIBLE** with Pi 4B or Pi 5!!!
 
@@ -150,7 +162,7 @@ The table below shows the pcb hardware and software compatibility:
 | Pi 4B                  |      ✓     |      ✗     |      ✗     |     ✗     |
 | Pi 5                   |      ✓     |      ✗     |      ✗     |     ✗     |
 
-* C64P requires firmware uf2 named _legacy_ for v3.0 or greater, but it compatible with all versions.
+* C64P requires firmware uf2 named _legacy_ for v3.0, and is not compatible with any higher version without [modification](MODIFICATIONS.md).
 
 ## History
 
