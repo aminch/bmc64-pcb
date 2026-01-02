@@ -1,24 +1,19 @@
 # BMC64 PCB (Longboard)
 
-The longboard is effectively **DEPRECATED** for now. It's still a great board, but won't get any more updates for now. 
+This Longboard README details how to build or [modify](MODIFICATIONS.md) the v 2.0.5 of the BMC64 PCB. The longboard is effectively **DEPRECATED** for now, and won't get any more updates. Go [here](README.md) for the latest board.
 
-If you want to build a BMC64 machine with a Raspberry Pi 3B+ this board will still work great! 
-
-The features it's missing are:
+The features the longboards are missing are:
 
  * Limited to USB 2.0 extensions (but this probably has zero practical effect)
- * Doesn't support Mechboard 64 without [modification](MODIFICATIONS.md) 
+ * Doesn't support [Mechboard 64](https://www.retrofuzion.com/products/mechboard-64-fully-backlit) without [modification](MODIFICATIONS.md) 
  * C64P stuck on firmware v3.0 without [modification](MODIFICATIONS.md)
+ * See [History](README.md#history) for any future updates
+
+These are not deal breakers if you are using an original C64 keyboard and BMC64, but if you are building a new board it is recommended to jump back to the main [README](README.md) and build the latest revision.
 
 If there is interest in the longboard I can look into bringing it back in the feature. Create an issue if you're interested and let me know why you would prefer this longboard. 
 
 ---
-
-This Longboard README details how to build the v 2.0.5 of the BMC64 PCB, which was the last version of the larger PCB before it was redesigned into the [shortboard](README.md) format from v 2.2 and onward. This repository also contains gerbers, schematics and images for all previous versions in the appropriate folders.
-
----
-
-The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/), [Rasberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/), original joystick ports, and USB-C power in a single drop-in board which fits straight into an original breadbin or C64C case.  It's powered by the fantastic C64 emulator [BMC64](https://accentual.com/bmc64/) and all ports are moved to suitable positions for an original C64 case for easy access without any case modifications needed! You can also connect an on/off LED indicator into the original spot in the case.
 
 - [BMC64 PCB (Longboard)](#bmc64-pcb-longboard)
   - [PCBs \& Parts](#pcbs--parts)
@@ -32,12 +27,6 @@ The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com
     - [Alternative software](#alternative-software)
     - [Compatibility](#compatibility)
   - [History](#history)
-    - [2.0.5](#205)
-    - [2.0.4](#204)
-    - [2.0.1](#201)
-    - [1.2.1](#121)
-    - [1.2](#12)
-    - [Pre-PCB solutions](#pre-pcb-solutions)
   - [Disclaimer](#disclaimer)
 
 
@@ -61,7 +50,7 @@ Full [BOM (Longboard)](bom/longboard-bom.md) of parts needed.
 
 I ordered the PCBs via [JLCPCB](https://jlcpcb.com/) with just the standard settings. The main PCB was the standard 1.6mm thick, but it is important to order the MicroSD adapter board in **0.6mm** or **0.8mm** thick or it will be too big to fit into the microSD slot on the Raspberry Pi 3B+!
 
-Check the Releases, or `gerbers` folder for the gerber files.
+Check the [Releases](https://github.com/aminch/bmc64-pcb/releases/tag/V2.0.5), or `gerbers` folder for the gerber files.
 
 ### Schematics
 
@@ -129,25 +118,13 @@ The fitment of the board inside a C64C case is shown also shown above. All ports
 
 ## Software
 
-It runs the [BMC64](https://accentual.com/bmc64/) emulator. Install this onto a MicroSD. You will need to run with the GPIO Config Option #1, and `positional` setting for the keyboard.
+Longboards have the Unversioned C64P PCB revision. You **MUST** use the v3.0 [_legacy_](https://github.com/aminch/c64p/releases/download/V3.0/c64p_legacy_default.uf2) build of the uf2 firmware as the C64P doesn't support anything else without [modification](MODIFICATIONS.md).
 
-You will need to install the v3.0 _legacy_ build of [C64P](https://github.com/aminch/c64p/releases/tag/V3.0) firmware on the Raspberry Pi Pico (legacy uf2 file). Do this by connecting it to a PC then dropping the firmware on the drive that is attached. 
-
-Note: you **MUST** use the v3.0 [_legacy_](https://github.com/aminch/c64p/releases/download/V3.0/c64p_legacy_default.uf2) build of the uf2 firmware as the C64P doesn't support anything else without [modification](MODIFICATIONS.md).
-
-For the first run of BMC64 you will need to switch the keyboard into BMC64 mode by pressing `RUN/STOP + F3`. (For details see: [C64P Readme](https://github.com/aminch/c64p))
-
-**Note:** This is a basic PCB. It's designed only for use with the BMC64 emulator, it's not recommended to use any other software on your Raspberry Pi 3B+ when using this PCB. See disclaimer below.
+See: [Software](README.md#software) for all other details.
 
 ### Alternative software
 
-With the release of v2.0.5, it's now possible to use a [Pi 4B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) or [Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/) (recommended). Even though the longboard is compatible with the Pi 4B and Pi 5, I would recommend the [shortboard](README.md) for this setup.
-
-Note: BMC64 **IS NOT COMPATIBLE** with Pi 4B or Pi 5!!!
-
-If you use a Pi 4B or Pi 5 you need to run Pi OS then install emulators on PiOS and configure them up to use the GPIO joystick ports. To make this easy you can use [8-bit PC Pi compile](https://github.com/aminch/8-bit-pc-pi-compile), a repository that contains scripts to install Vice and Atari800 emulators onto PiOS Lite. It also includes a menu and configuration to support the bcm-pcb.
-
-C64P also includes a Vice mode to work with an original C64 keyboard. You need to press `RUN/STOP + F5` on first launch. (For details see: [C64P Readme](https://github.com/aminch/c64p))
+See: [Alternative Software](README.md#alternative-software) for more details.
 
 ### Compatibility
 
@@ -166,50 +143,7 @@ The table below shows the pcb hardware and software compatibility:
 
 ## History
 
-See [README](README.md) for all newer versions
-
-### 2.0.5
-
-Changes for the 2.0.5:
-
- * Repositioning of MicroSD card, USB ports extensions and LED connector
- * Increased trace thickness for VCC / GND on MicroSD adapter
- * MicroSD adapter now compatible with Pi 4B & Pi 5
-
-### 2.0.4
-
-Changes for the 2.0.4:
-
- * Added debug port to direct connect a FTDI232
- * Extend PCB cut outs for switch for better clearance
- * Minor trace repositioning and clean up
-
-### 2.0.1
-
-Changes for the 2.0.1 model were:
-
- * ESD protection with TVS diodes added to the joystick ports
- * Added an additional rear facing USB port
- * Repositioned the keyboard header for a cleaner connection
- * Adjusted the mounting holes for better fitment
- * Thicker traces for main power rail
- * Repositioned traces to avoid foot of keyboard mount for C64C case
- 
-### 1.2.1
-
-Small adjustments on SD_CONN, main power switch and external USB port for improved fitment.
-
-### 1.2
-
-To read the journey from the prototype V1.0 PCB to the V1.2 check out the blog post: [All in One BCM64 PCB](https://retro.minch.io/2025/06/all-in-one-bmc64-pcb/)
-
-### Pre-PCB solutions
-
-Before I went for the single PCB solution I had tried many options to make a clean build for a **new** C64. You can read about that in the series of blog posts I made (link below). You can also find information about the choices I made in this project, such as not connecting an original C64 keyboard directly via GPIO but going for the USB keyboard option.
-
-* [Building a Commodore 64 - Part I - (Why!?!)](https://retro.minch.io/2021/12/building-a-commodore-64-part-i-why/) - The whole journey to here
-* [Building a Commodore 64 - Part VIII - (BMC64 Keyboard)](https://retro.minch.io/2022/02/building-a-commodore-64-part-viii-bmc64-keyboard/) - USB keyboard choice specifics 
-* [C64P - BMC64 Keyboard](https://retro.minch.io/2023/04/c64p-bmc64-keyboard/) - Original C64 USB Keyboard adapter
+See [History](README.md#history) for full details
 
 ## Disclaimer
 
