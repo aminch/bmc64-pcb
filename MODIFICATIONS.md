@@ -10,10 +10,10 @@ Note: Proceed **AT YOUR OWN RISK**. If in doubt just order new v4.0 PCBs.
 
 The steps are the same for any PCB. They are:
 
- * Cut the trace leading from Pin 1 on C64 header to the GPIO header on the Pico/RP2040-Zero.
-   * Note: This will be going to GPIO 5 on Unversioned boards and GPIO 0 on v2.0 boards. 
- * Connect Pin 1 on C64 header to ground (GND). 
-   * The easiest way to do that is to scratch off some of the PCB upper layer next to Pin 1 on the back of the board and expose copper on the ground plane. Then simply join the pin to the ground plane with a solder blob. (See below)
+ * Cut the trace leading from Pin 1 on C64 keyboard header to the GPIO header on the Pico/RP2040-Zero.
+   * Note: This will be going to GPIO 5 on the Unversioned C64P revision and GPIO 0 on a v2.0 C64P revision. 
+ * Connect Pin 1 on C64 keyboard header to ground (GND). 
+   * The easiest way to do that is to scratch off some of the PCB upper layer next to Pin 1 on the back of the board and expose copper on the ground plane. Then simply join the Pin 1 to the ground plane with a solder blob. (See below)
  * The next step is **ONLY** needed if you want to support the Mechboard 64, you **DO NOT** need to do this for original C64 keyboards to work.
    * Connect Pin 4 on C64 keyboard header to 5V power. There are two ways to do this:
      * Connect directly between Pin 4 on the C64 keyboard header and Pin 2 (5V) on Raspberry Pi. 
@@ -21,8 +21,8 @@ The steps are the same for any PCB. They are:
      * Connect a DDO603SA as per the [schematic](README.md/#schematics) for a v4.0 board and tape it to the board with some double sided tape. (See below)
      * Otherwise just order a v4.0 PCB - This is your **BEST** option. 
  * Update the Pico/RP2040-Zero on the C64P with the correct firmware:
-   * `c64p_default.uf2` - for v2.0 C64Ps
-   * `c64p_legacy_default.uf2` - for Unversioned C64Ps
+   * `c64p_default.uf2` - for v2.0 C64P revisions
+   * `c64p_legacy_default.uf2` - for Unversioned C64P revisions
  * That's it!
 
 ## Sample modified PCBs
