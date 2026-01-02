@@ -1,6 +1,8 @@
 # Bill of Materials (BOM) Shortboard
 
-All of the parts needed to build a V2.2 board
+All of the parts needed to build a V2.2 or v4.0 board. You need both the Digikey and AliExpress parts below.
+
+## Digikey parts
 
 | Index | Manufacturer Part Number | Manufacturer Name               | Description                      | Quantity | Digi-Key Part Number          | Datasheet                                                                                                             |
 |-------|--------------------------|---------------------------------|----------------------------------|----------------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -26,33 +28,39 @@ All of the parts needed to build a V2.2 board
 | 20    | PPTC091LFBN-RC           | Sullins Connector Solutions     | CONN HDR 9POS 0.1 TIN PCB        | 2                    | [S7007-ND](https://www.digikey.no/en/products/detail/sullins-connector-solutions/PPTC091LFBN-RC/810148)                      | [DataSheet](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/937/Female_Headers.100_DS.pdf) |
 | 21    | PPTC051LFBN-RC           | Sullins Connector Solutions     | CONN HDR 5POS 0.1 TIN PCB        | 1                    | [S6103-ND](https://www.digikey.no/en/products/detail/sullins-connector-solutions/PPTC051LFBN-RC/807239)                      | [DataSheet](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/937/Female_Headers.100_DS.pdf) |
 
-Full Digikey 2.2 BOM [Online](https://www.digikey.no/en/mylists/list/35ZL5UPXPZ)
+Full Digikey v4.0 BOM [Online](https://www.digikey.no/en/mylists/list/3DWHBMV8UX)
+
+Note: v2.2 & v4.0 have the same Digikey BOM
 
 ## AliExpress parts
 
-The following parts are easier or cheaper to buy from AliExpress. Here are examples as of September 2025.
+The following parts are easier or cheaper to buy from AliExpress. 
 
-Waveshare RP2040-Zero
+Here are examples as of January 2026, be aware availability on AliExpress can change so I have included extra details to help search for replacements if the linked component is no longer available.
 
-* [RP2040-Zero](https://www.aliexpress.com/item/1005007650325892.html) - An example, but there are many sellers on Aliexpress
+---
 
-Short 40pin GPIO Ribbon Cable
+| Index | Item | Description / search details | Quantity | Link | Notes |
+|------:|------|-----------------------------|---------:|------|-------|
+| 1 | Waveshare RP2040-Zero | RP2040-Zero dev board | 1 | [RP2040-Zero](https://www.aliexpress.com/item/1005007650325892.html) | [Waveshare official site](https://www.waveshare.com/rp2040-zero.htm) |
+| 2 | Short 40-pin GPIO ribbon cable | Female-to-female, 40-pin, 10cm | 1 | [Raspberry Pi 40 Pin GPIO Cable F-F](https://www.aliexpress.com/item/1005006907762388.html) |  |
+| 3 | Short USB cable (5cm) | USB-A (male) to USB-C (male), 5cm, “AMST-CMST” | 1 | [USB-A (Male) to USB-C (Male)](https://www.aliexpress.com/item/1005005973334576.html) |  |
+| 4 | Short USB cables (5cm) | USB-A (male) to USB-A (male), USB 3.0, 5cm, “S1A-S1B” | 2 | [USB-A (Male) to USB-A (Male) USB 3.0](https://www.aliexpress.com/item/1005008057812288.html) | USB3 cables are preferred over USB2 below |
+| 5 | Short USB cables (5cm) (alternative) | USB-A (male) to USB-A (male), USB 2.0, 5cm, “AMST-AMST” | 2 | [USB-A (Male) to USB-A (Male)](https://www.aliexpress.com/item/1005006339293579.html) | Optional USB2 to instead of USB3 above |
+| 6 | M2.5 nylon stand-offs | M2.5, 6mm height, 6mm thread length (“6+6”) | 4 | [Nylon M2.5 6+6](https://www.aliexpress.com/item/1005005979250243.html) | Linked kit includes (screw + stand-off + nut) |
 
-* [Raspberry Pi 40 Pin GPIO Cable F-F](https://www.aliexpress.com/item/1005006907762388.html) - (Female to Female 10cm)
+### Mechboard 64 support
 
-Short USB Cables (5cm)
+If you want to support the Mechboard 64 either on a v4.0+ PCB or by [modifying](/MODIFICATIONS.md) an older PCB you will need a Canton-Power DDO603SA 5V Buck-Boost Converter Module.
 
-* [USB-A (Male) to USB-C (Male)](https://www.aliexpress.com/item/1005005973334576.html) - (AMST-CMST) 5cm
-* 2x [USB-A (Male) to USB-A (Male) USB 3.0](https://www.aliexpress.com/item/1005008057812288.html) - (S1A-S1B) 5cm
+| Index | Item | Description / search details | Quantity | Link | Notes |
+|------:|------|-----------------------------|---------:|------|-------|
+| 1 | Canton-Power DDO603SA 5V | 5V buck-boost converter module (no pin) | 1 | [DDO603SA 5V](https://www.aliexpress.com/item/1005006477992171.html) | Required for Mechboard 64 support |
 
-You can just use USB 2.0 cables instead if you want see below:
+### Alternative software support
 
-* 2x [USB-A (Male) to USB-A (Male)](https://www.aliexpress.com/item/1005006339293579.html) - (AMST-AMST) 5cm
+If you want to use the alternative software with a Pi 4B or Pi 5 you'll need to swap out the Raspberry Pi 3B+ above for a Pi 4B or Pi5 (recommended). Also you will need a momentary button to turn the Pi on and off. The following fits perfectly in the RF jack hole.
 
-M2.5 6mm Nylon Stand offs 
-
-* 4x [Nylon M2.5 6+6](https://www.aliexpress.com/item/1005005979250243.html) - M2.5 size, 6mm height, 6mm thread length. You can find options with the screw, stand-off and nut in one package.
-
-If you want to use the alternative software with a Pi 4B or Pi 5 you'll need a momentary button to turn the Pi on and off. The following fits perfectly in the RF jack hole.
-
-* [Short Push Button Switch](https://www.aliexpress.com/item/1005003993025317.html) - 12mm
+| Index | Item | Description / search details | Quantity | Link | Notes |
+|------:|------|-----------------------------|---------:|------|-------|
+| 1 | Momentary push button | 3-6V, 12mm short push button switch | 1 | [Short Push Button Switch](https://www.aliexpress.com/item/1005003993025317.html) | 3-6V, 12mm |
