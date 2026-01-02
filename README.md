@@ -11,11 +11,14 @@ The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com
     - [Ordering PCBs](#ordering-pcbs)
     - [Schematics](#schematics)
     - [Compatibility](#compatibility)
+      - [Keyboards](#keyboards)
+      - [Cases](#cases)
   - [Assembly](#assembly)
   - [Software](#software)
     - [Alternative software](#alternative-software)
     - [Debugging BMC64](#debugging-bmc64)
   - [History](#history)
+    - [4.0](#40)
     - [2.2](#22)
     - [2.0.5](#205)
     - [2.0.4](#204)
@@ -27,17 +30,21 @@ The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com
 
 ## Revisions
 
-In the spirit of the original Commodore 64, there are two main revisions of the BMC64 PCB, just as there were two main sizes of [motherboards](https://www.c64-wiki.com/wiki/Motherboard) used in Commodore 64s. I'm even reusing the same naming convention. The longboard and shortboard. 
+In the spirit of the original Commodore 64, there are two main sizes of the BMC64 PCB, just as there were two main sizes of [motherboards](https://www.c64-wiki.com/wiki/Motherboard) used in Commodore 64s. I'm even reusing the same naming convention. The longboard and shortboard. The longboards are the original versions of the BMC64 PCB named because the PCB was larger than newer shortboard versions. They use both the expansion (cartridge) port and cassette port holes in the case to expose the HDMI, USB and MicroSD card ports. The short board was introduced in v 2.2. It's smaller and only uses the expansion (cartridge) port to expose the HDMI, USB and MicroSD card ports. 
 
-The longboards are the original versions of the BMC64 PCB named because the PCB was larger than newer shortboard versions. They use both the expansion (cartridge) port and cassette port holes in the case to expose the HDMI, USB and MicroSD card ports. Longboards are numbered up to v 2.0.5. Details on the longboard and how to build one have been moved to it's own [LONGBOARD](LONGBOARD.md) readme.
+There have been three major revisions on the BMC64 PCB.
 
-The short board was introduced in v 2.2. It's smaller and only uses the expansion (cartridge) port to expose the HDMI, USB and MicroSD card ports. This readme details how to build the shortboard revision.
+ * [Longboard (v1.2 - v2.0.5)](LONGBOARD.md) - DEPRECATED
+ * [Shortboard (v2.2)](SHORTBOARD22.md) - DEPRECATED
+ * Shortboard (v4.0) - current, details in this README
+
+If you have an existing PCB it can be [modified](MODIFICATIONS.md) to support the features and firmware for v4.0. Proceed with modifications **AT YOUR OWN RISK**. If in doubt just order new v4.0 PCBs. 
 
 ## PCBs & Parts
 
 ### Main PCB
 
-![BMC64 PCB](images/bmc64-pcb-v2.2.png)
+![BMC64 PCB](images/bmc64-pcb-v4.0-top.png)
 
 ### MicroSD card adapter board
 
@@ -53,19 +60,30 @@ Full [BOM](bom/bom.md) of parts needed.
 
 I ordered the PCBs via [JLCPCB](https://jlcpcb.com/) with just the standard settings. The main PCB was the standard 1.6mm thick, but it is important to order the MicroSD adapter board in **0.6mm** or **0.8mm** thick or it will be too big to fit into the microSD slot on the Raspberry Pi 3B+!
 
-Check the [Releases](https://github.com/aminch/bmc64-pcb/releases) for the gerber files.
+Check the [Releases](https://github.com/aminch/bmc64-pcb/releases/latest) for the gerber files.
 
 ### Schematics
 
-![BMC64 PCB Schematic](schemantics/Schematic_BMC64-PCB-V2.2_2025-08.png)
+![BMC64 PCB Schematic](schemantics/Schematic_BMC64-PCB-V4.0_2026-01.png)
 
 ![MicroSD card adapter](schemantics/Schematic_MicroSD-Adapter-V1.1_2025-07.png)
 
 ### Compatibility
 
-The [C64P](https://github.com/aminch/c64p) used on this PCB to connect the keyboard is compatible with original C64 keyboards. 
+#### Keyboards
 
-It is currently **NOT** compatible with Mechboard64, which requires the 5V connection to power the LEDs and shift lock mechanism. (See: [#4](https://github.com/aminch/bmc64-pcb/issues/4))
+BMC64 PCB is compatible with:
+
+ * Original C64 keyboards
+ * [Mechboard 64](https://www.retrofuzion.com/products/mechboard-64-fully-backlit) (support added in v4.0).
+  
+To support the [Mechboard 64](https://www.retrofuzion.com/products/mechboard-64-fully-backlit), it needs to have the 5V on pin 4 of the C64 Keyboard header active. You can just connect the 5V directly from the main 5V voltage input, it works, kinda, but there is not enough stable voltage from the microcontroller to keep the LEDs a constant brightness. I added a header on which you can install an optional Canton-Power DDO603SA 5V Buck-Boost Converter Module which looks to have solved the problem. (See assembly)
+
+Note: If you are using an original C64 keyboard you can just leave the header for the DDO603SA unpopulated, it is not required.
+
+#### Cases
+
+BMC64 PCB fits inside both the original breadbin and C64C cases. It mounts to the original mounts and reuses existing holes in the case, no modifications required.
 
 ## Assembly
 
@@ -99,6 +117,10 @@ All of the other parts are labelled on the board. Start with the smallest compon
  * 1x20 header pins (for C64 keyboard)
  * 2x 1x9 and 1x 1x5 female headers for mounting the RP2040-Zero
  * MicroSD card slot
+ * Mechboard 64 support (optional):
+   * Cut 1x4 header pins from the 1x20 header pins in the [BOM](bom/bom.md).
+   * Solder the pins into the header below the GPIO header
+   * Solder the DDO603SA 5V Buck-Boost Converter Module onto the pins
  * 1x6 female header for FTDI232 debug points (optional)
 
 ![BMC64 PCB](images/bcm64-pcb-v2.2.jpg)
@@ -156,6 +178,15 @@ The debug probe is used to view the output log from the BMC64 emulator while it'
 ```
 
 ## History
+
+### 4.0
+
+Changes for the 4.0:
+
+ * Major version alignment with BMC64 PCB, C64P PCB, and C64P firmware. All are v4.
+ * Added optional support for [Mechboard 64](https://www.retrofuzion.com/products/mechboard-64-fully-backlit)
+ * C64P updated to v4.0
+ * Positioning adjustment for RP2040-Zero, USB 3.0 extensions and C64 keyboard header for easier connecting.
 
 ### 2.2
 
