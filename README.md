@@ -34,9 +34,9 @@ In the spirit of the original Commodore 64, there are two main sizes of the BMC6
 
 There have been three major revisions on the BMC64 PCB.
 
- * [Longboard (v1.2 - v2.0.5)](LONGBOARD.md) - DEPRECATED
- * [Shortboard (v2.2)](SHORTBOARD22.md) - DEPRECATED
  * Shortboard (v4.0) - current, details in this README
+ * [Shortboard (v2.2)](SHORTBOARD22.md) - DEPRECATED
+ * [Longboard (v1.2 - v2.0.5)](LONGBOARD.md) - DEPRECATED
 
 If you have an existing PCB it can be [modified](MODIFICATIONS.md) to support the features and firmware for v4.0. Proceed with modifications **AT YOUR OWN RISK**. If in doubt just order new v4.0 PCBs. 
 
@@ -44,7 +44,7 @@ If you have an existing PCB it can be [modified](MODIFICATIONS.md) to support th
 
 ### Main PCB
 
-![BMC64 PCB](images/bmc64-pcb-v4.0-top.png)
+![BMC64 PCB](images/bmc64-pcb-v4.0.png)
 
 ### MicroSD card adapter board
 
@@ -123,13 +123,13 @@ All of the other parts are labelled on the board. Start with the smallest compon
    * Solder the DDO603SA 5V Buck-Boost Converter Module onto the pins
  * 1x6 female header for FTDI232 debug points (optional)
 
-![BMC64 PCB](images/bcm64-pcb-v2.2.jpg)
+![BMC64 PCB](images/bcm64-pcb-v4.0.jpg)
 
 You'll need to flip the board for the final components
 
  * 4x TVS diodes in the ESD1-4 positions next to the joysticks
 
-![BMC64 PCB](images/bcm64-pcb-bottom-v2.2.jpg)
+![BMC64 PCB](images/bcm64-pcb-bottom-v4.0.jpg)
 
 To assemble the final parts:
 
@@ -141,7 +141,7 @@ To assemble the final parts:
  * Replace the plastic switch on the main switch with the smaller one included in the [BOM](bom/bom.md). (This is needed for the switch to fit correctly in the hole in the C64 case)
  * The finished board should be ready to drop into the case! It should look like it does below:
 
-![BMC64 PCB with Raspberry Pi](images/bcm64-pcb-with-pi-v2.2.jpg)
+![BMC64 PCB with Raspberry Pi](images/bcm64-pcb-with-pi-v4.0.jpg)
 
 The fitment of the board inside a C64 breadbin case is shown also shown above. All ports, the power switch and USB-C power connector use the existing holes in the case. It is mounted using screws to the existing stand-offs inside the case. It has mounting holes compatible with the breadbin and C64C cases.
 
