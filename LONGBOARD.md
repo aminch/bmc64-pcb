@@ -11,7 +11,7 @@ The features the longboards are missing are:
 
 These are not deal breakers if you are using an original C64 keyboard and BMC64, but if you are building a new board it is recommended to jump back to the main [README](README.md) and build the latest revision.
 
-If there is interest in the longboard I can look into bringing it back in the feature. Create an issue if you're interested and let me know why you would prefer this longboard. 
+If there is interest in the longboard I can look into bringing it back in the future. Create an issue if you're interested and let me know why you would prefer this longboard. 
 
 ---
 
