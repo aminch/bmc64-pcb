@@ -1,4 +1,4 @@
-# BMC64 PCB (Longboard 4.0)
+# BMC64 PCB (Longboard v4)
 
 This Longboard README contains details on the longboard variant of the BMC64 PCB.
 
@@ -13,7 +13,7 @@ The differences from the shortboard are:
 
 ---
 
-- [BMC64 PCB (Longboard 4.0)](#bmc64-pcb-longboard-40)
+- [BMC64 PCB (Longboard v4)](#bmc64-pcb-longboard-v4)
   - [PCBs \& Parts](#pcbs--parts)
     - [Main PCB - Longboard](#main-pcb---longboard)
     - [MicroSD card adapter board](#microsd-card-adapter-board)
