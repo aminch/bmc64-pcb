@@ -34,9 +34,10 @@ In the spirit of the original Commodore 64, there are two main sizes of the BMC6
 
 There have been three major revisions on the BMC64 PCB.
 
- * Shortboard (v4.0) - current, details in this README
+ * Shortboard (v4.0) or [Longboard (v4.0)](LONGBOARD.md) - current, details in this README
+   * The current revision can be built in shortboard or longboard PCBs which have almost identical functionality, they just look different... choose your preference. 😃 
  * [Shortboard (v2.2)](SHORTBOARD22.md) - DEPRECATED
- * [Longboard (v1.2 - v2.0.5)](LONGBOARD.md) - DEPRECATED
+ * [Longboard (v1.2 - v2.0.5)](LONGBOARDv2.md) - DEPRECATED
 
 If you have an existing PCB it can be [modified](MODIFICATIONS.md) to support the features and firmware for v4.0. Proceed with modifications **AT YOUR OWN RISK**. If in doubt just order new v4.0 PCBs. 
 
@@ -187,6 +188,7 @@ Changes for the 4.0:
  * Added optional support for [Mechboard 64](https://www.retrofuzion.com/products/mechboard-64-fully-backlit)
  * C64P updated to v4.0
  * Positioning adjustment for RP2040-Zero, USB 3.0 extensions and C64 keyboard header for easier connecting.
+ * Brought back optional [Longboard](LONGBOARD.md) form factor!
 
 ### 2.2
 
