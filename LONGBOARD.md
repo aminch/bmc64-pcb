@@ -11,6 +11,8 @@ The differences from the shortboard are:
  * Uses a [Raspberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/) instead of a [Waveshare RP2040-Zero](https://www.waveshare.com/wiki/RP2040-Zero).
  * Uses single USB2 ports instead of stacked USB3.
 
+If you want an easier to solder version check out the [Longboard AliExpress Edition](/ALIEXPRESS_ED.md).
+
 ---
 
 - [BMC64 PCB (Longboard v4)](#bmc64-pcb-longboard-v4)
