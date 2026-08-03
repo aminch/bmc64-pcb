@@ -174,9 +174,11 @@ An optional debug port can be populated with a 6 position female header. This he
 
 ![BMC64 PCB with Debug Probe](images/bcm64-pcb-with-debug-probe-v2.2.jpg)
 
-The debug probe is used to view the output log from the BMC64 emulator while it's running to debug problems. You plug in the debug probe and connect with an application such as Putty e.g.
+The debug probe is used to view the output log from the BMC64 emulator while it's running to debug problems. You plug in the debug probe and connect with an application such as picocom or Putty e.g.
 
 ```
+ picocom -b 115200 /dev/ttyUSB0
+
  sudo putty /dev/ttyUSB0 - serial -sercfg 115200,8,n,1,N
 ```
 
