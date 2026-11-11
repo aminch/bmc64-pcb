@@ -24,6 +24,8 @@ There are **NO** functional differences to the standard longboard.
     - [Schematics](#schematics)
   - [Assembly](#assembly)
   - [Software](#software)
+    - [C64 Keyboard Support](#c64-keyboard-support)
+    - [C16 Keyboard Support](#c16-keyboard-support)
   - [History](#history)
   - [Disclaimer](#disclaimer)
 
@@ -32,7 +34,7 @@ There are **NO** functional differences to the standard longboard.
 
 ### Main PCB - Longboard (AliExpress Edition)
 
-![BMC64 PCB](images/bmc64-pcb-v4.0.1a-aliexpressed.png)
+![BMC64 PCB](images/bmc64-pcb-v4.0.2a-aliexpressed.png)
 
 ### USB-C PD Power adapter board
 
@@ -54,11 +56,11 @@ Full [BOM (AliExpress Edition)](bom/aliexpress-ed-bom.md) of parts needed.
 
 I ordered the PCBs via [JLCPCB](https://jlcpcb.com/) with just the standard settings. The main PCB and power board was the standard 1.6mm thick, but it is important to order the MicroSD adapter board in **0.6mm** or **0.8mm** thick or it will be too big to fit into the microSD slot on the Raspberry Pi 3B+!
 
-Check the [Releases](https://github.com/aminch/bmc64-pcb/releases/tag/V2.0.5), or `gerbers` folder for the gerber files.
+Check the [Releases](https://github.com/aminch/bmc64-pcb/releases/tag/V4.0.2A), or `gerbers` folder for the gerber files.
 
 ### Schematics
 
-![BMC64 PCB Schematic](schemantics/Schematic_BMC64-PCB-V4.0.1A-AliExpressEd_2026-03.png)
+![BMC64 PCB Schematic](schemantics/Schematic_BMC64-PCB-V4.0.2A-AliExpressEd_2026-11.png)
 
 ![USB-C PD Power adapter](schemantics/Schematic_Power-Board-AliExpressEd_2026-03.png)
 
@@ -94,11 +96,12 @@ Note: There are multiple holes in the power pcb to accommodate different USB-C P
 Next attach the step-down modules to the board. The simplest method is:
 
  * Cut single 1x1 header pins from the 1x20 header.
- * Align the SY8205 on the board and insert one header pin per corner (plastic up).
+ * Align the SY8205 on the board and insert one header pin per corner (plastic up). 
  * Hold in place with tape over the pins and flip the board.
  * Solder the pins on the bottom of the pcb.
  * Flip the board over, and remove the plastic from the top of the pins.
  * Check alignment then solder the pins on the top and trim to length.
+ * Add a second pin to the two + pads on the SY8205
 
 Repeat above for the MP1584EN, if you need Mechboard support, otherwise it can be left blank.
 
@@ -110,11 +113,30 @@ From there you can follow the assembly instructions in the main [README](README.
 
 ![BMC64 4.0.1A](images/bcm64-pcb-v4.0.1a.jpg)
 
+Additional step for 4.0.2A revision
+
+ * Cut 1x3 header pins and solder to the C64/C16 selector
+ * Attach a 1x2 jumper to the correct keyboard
+
 The board will fit inside a C64C or breadbin case and all ports, the power switch and USB-C power connector use the existing holes in the case. It is mounted using screws to the existing stand-offs inside the case. 
 
 ## Software
 
-See [Software](README.md#software) for full details
+See [Software](README.md#software) for full details, and information below for C64P v5.0 support.
+
+This board supports the C64P v5.0. This has support for either a C64 or C16 original keyboard. 
+
+### C64 Keyboard Support
+
+You will need to install the latest [C64P](https://github.com/aminch/c64p/releases) firmware on the Raspberry Pi Pico (**do not use** the legacy uf2 file). Do this by connecting it to a PC then dropping the firmware on the drive that is attached. 
+
+For the first run of BMC64 you will need to switch the keyboard into BMC64 mode by pressing `RUN/STOP + F3`. (For details see: [C64P Readme](https://github.com/aminch/c64p))
+
+### C16 Keyboard Support
+
+You will need to install the latest [C16P](https://github.com/aminch/c16p/releases) firmware on the Raspberry Pi Pico. Do this by connecting it to a PC then dropping the firmware on the drive that is attached. 
+
+For the first run of BMC64 you will need to switch the keyboard into BMC64 mode by pressing `RUN/STOP + F3`. (For details see: [C16P Readme](https://github.com/aminch/c16p))
 
 ## History
 

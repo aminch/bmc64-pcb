@@ -18,6 +18,7 @@ The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com
     - [Alternative software](#alternative-software)
     - [Debugging BMC64](#debugging-bmc64)
   - [History](#history)
+    - [4.0.2A](#402a)
     - [4.0.1A](#401a)
     - [4.0](#40)
     - [2.2](#22)
@@ -37,7 +38,7 @@ There have been three major revisions on the BMC64 PCB.
 
  * Shortboard (v4.0) or [Longboard (v4.0)](LONGBOARD.md) - current, details in this README
    * The current revision can be built in shortboard or longboard PCBs which have almost identical functionality, they just look different... choose your preference. 😃 
- * [Longboard v4.0.1A (AliExpress Edition)](ALIEXPRESS_ED.md) - current, identical to the above, except uses AliExpress modules to make soldering and assembly easier.
+ * [Longboard v4.0.2A (AliExpress Edition)](ALIEXPRESS_ED.md) - current, identical to the above, except uses AliExpress modules to make soldering and assembly easier. 
  * [Shortboard (v2.2)](SHORTBOARD22.md) - DEPRECATED
  * [Longboard (v1.2 - v2.0.5)](LONGBOARDv2.md) - DEPRECATED
 
@@ -184,6 +185,17 @@ The debug probe is used to view the output log from the BMC64 emulator while it'
 
 ## History
 
+### 4.0.2A
+
+**NOTE:** This version is only for those who want an easier to solder variant. It's functionally the same as the v4.0.
+
+Changes for the 4.0.2A:
+
+ * Increased thickness of power rails for more reliable power delivery
+ * C64P updated to v5.0 (Supports original C64 and C16 keyboards)
+
+See [ALIEXPRESS_ED.md](ALIEXPRESS_ED.md) for details.
+
 ### 4.0.1A
 
 **NOTE:** This version is only for those who want an easier to solder variant. It's functionally the same as the v4.0.
@@ -193,7 +205,7 @@ Changes for the 4.0.1A:
  * Dubbed the AliExpress version as it used cheap AliExpress modules to save soldering small resistors and capacitors.
  * Switched power delivery to be all AliExpress modules.
 
-See [ALIEXPRESS_ED.md](ALIEXPRESS_ED.md) for details.
+Superseded by the v4.0.2A above.
 
 ### 4.0
 
