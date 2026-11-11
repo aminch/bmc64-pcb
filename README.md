@@ -34,6 +34,8 @@ The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com
 
 ## Revisions
 
+Current recommendation is the [Longboard v4.0.2A (AliExpress Edition)](ALIEXPRESS_ED.md) for easy of soldering and updated C64P adapter. See below for all revisions.
+
 In the spirit of the original Commodore 64, there are two main sizes of the BMC64 PCB, just as there were two main sizes of [motherboards](https://www.c64-wiki.com/wiki/Motherboard) used in Commodore 64s. I'm even reusing the same naming convention. The longboard and shortboard. The longboards are the original versions of the BMC64 PCB named because the PCB was larger than newer shortboard versions. They use both the expansion (cartridge) port and cassette port holes in the case to expose the HDMI, USB and MicroSD card ports. The short board was introduced in v 2.2. It's smaller and only uses the expansion (cartridge) port to expose the HDMI, USB and MicroSD card ports. 
 
 There have been three major revisions on the BMC64 PCB.
