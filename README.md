@@ -1,6 +1,8 @@
 # BMC64 PCB
 
-The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/), [Waveshare RP2040-Zero](https://www.waveshare.com/wiki/RP2040-Zero), original joystick ports, and USB-C power in a single drop-in board which fits straight into an original breadbin or C64C case with an original C64 keyboard.  It's powered by the fantastic C64 emulator [BMC64](https://accentual.com/bmc64/) and all ports are moved to suitable positions inside an original C64 case for easy access without any case modifications needed! You can also connect up the original LED.
+The BMC64 PCB combines together a [Raspberry Pi 3B+](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/), [Waveshare RP2040-Zero](https://www.waveshare.com/wiki/RP2040-Zero), original joystick ports, and USB-C power in a single drop-in board which fits straight into an original breadbin or C64C case with an original C64 keyboard.  It's powered by the fantastic C64 emulator [BMC64](https://github.com/randyrossi/bmc64) and all ports are moved to suitable positions inside an original C64 case for easy access without any case modifications needed! You can also connect up the original LED.
+
+**Update**: With the release of BMC64 v5.4.0, BMC64 now supports Pi 4B and Pi 5, which can also be used on this board.
 
 - [BMC64 PCB](#bmc64-pcb)
   - [Revisions](#revisions)
@@ -151,7 +153,7 @@ The fitment of the board inside a C64 breadbin case is shown also shown above. A
 
 ## Software
 
-It runs the [BMC64](https://accentual.com/bmc64/) emulator. Install this onto a MicroSD. You will need to run with the GPIO Config Option #1, and `positional` setting for the keyboard.
+It runs the [BMC64](https://github.com/randyrossi/bmc64) emulator. Install this onto a MicroSD. You will need to run with the GPIO Config Option #1, and `positional` setting for the keyboard.
 
 You will need to install the latest [C64P](https://github.com/aminch/c64p/releases) firmware on the RP2040-Zero (**do not use** the legacy uf2 file). Do this by connecting it to a PC then dropping the firmware on the drive that is attached. 
 
@@ -163,9 +165,9 @@ For the first run of BMC64 you will need to switch the keyboard into BMC64 mode 
 
 With the release of v2.0.5, it's now possible to use a [Pi 4B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) or [Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/) (recommended).
 
-Note: BMC64 **IS NOT COMPATIBLE** with Pi 4B or Pi 5!!!
+**Update**: With the release of BMC64 v5.4.0, BMC64 now supports Pi 4B and Pi 5, which can be used on this board.
 
-If you use a Pi 4B or Pi 5 you need to run Pi OS then install emulators on PiOS and configure them up to use the GPIO joystick ports. To make this easy you can use [8-bit PC Pi compile](https://github.com/aminch/8-bit-pc-pi-compile), a repository that contains scripts to install Vice and Atari800 emulators onto PiOS Lite. It also includes a menu and configuration to support the bcm-pcb.
+As an alternative you can run Pi OS then install emulators on PiOS and configure them up to use the GPIO joystick ports. To make this easy you can use [8-bit PC Pi compile](https://github.com/aminch/8-bit-pc-pi-compile), a repository that contains scripts to install Vice and Atari800 emulators onto PiOS Lite. It also includes a menu and configuration to support the bmc64-pcb. A Pi 5 is recommended for this software set up.
 
 C64P also includes a Vice mode to work with an original C64 keyboard. You need to press `RUN/STOP + F5` on first launch. (For details see: [C64P Readme](https://github.com/aminch/c64p))
 
